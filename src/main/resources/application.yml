@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: library-bff-service
+server:
+  port: 8081
+
+
+jwt:
+  client: library-bff-service
+  secret: 9oRt!@x3$3cr3T
+  expiration: 604800
+
+eureka:
+  client:
+    heartbeat-executor-exponential-back-off-bound: 60000
+    eureka-server-read-timeout-seconds: 60000
+    eureka-server-connect-timeout-seconds: 60000
+    eureka-connection-idle-timeout-seconds: 6000
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: false
